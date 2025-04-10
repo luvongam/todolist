@@ -3,7 +3,6 @@ package com.jamlech.tododemo.service;
 import com.jamlech.tododemo.entity.TodoList;
 import com.jamlech.tododemo.entity.User;
 import com.jamlech.tododemo.repository.TodoListRepository;
-import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -81,7 +80,7 @@ public class TodoListService {
         return todoListRepository.findByUserAndPriority(user, priority);
     }
 
-    public List<Task> filterTasksByDueDate(User user, LocalDate dueDate) {
+    public List<TodoList> filterTasksByDueDate(User user, LocalDate dueDate) {
         return todoListRepository.findByUserAndDueDate(user, dueDate);
     }
 
